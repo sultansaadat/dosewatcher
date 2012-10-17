@@ -13,8 +13,8 @@ var userSchema = mongoose.Schema({
     email: String,
     password: String,
     notifications: Boolean,
-    sleeptimeStart: String,
-    sleeptimeEnd: String
+    sleeptimestart: String,
+    sleeptimeend: String
 });
 
 var User = db.model('User', userSchema);
@@ -25,8 +25,8 @@ exports.saveUser = function(user, done) {
         email: user.email,
         password: user.password,
         notifications: user.notifications,
-        sleeptimeStart: user.sleeptimeStart,
-        sleeptimeEnd: user.sleeptimeEnd
+        sleeptimestart: user.sleeptimestart,
+        sleeptimeend: user.sleeptimeend
     });
     toSave.save(function(err) {
         done(err, toSave);

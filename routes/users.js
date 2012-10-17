@@ -24,8 +24,6 @@ exports.register = function(req, res) {
 		sleeptimeend: req.body.sleeptimeend
 	};
 
-	console.log(user);
-
 	usermodel.saveUser(user, function(err, result) {
 		if(err) {
 			res.send(400);
@@ -48,28 +46,3 @@ exports.authenticate = function(req, res) {
 		}
 	});
 };
-
-
-// exports.getUser = function(req, res) {
-// 	dao.getUser(req.params.id, function(err, user) {
-// 		if(err) {
-// 			res.send(400, errors.errorByCode(err, 2001));
-// 		} else if(!user) {
-// 			res.send(404, errors.errorByCode(err, 2001));
-// 		} else {
-// 			res.json(user);
-// 		}
-// 	});
-// };
-
-// exports.getUsers = function(req, res) {
-// 	dao.getUsers(function(err, users) {
-// 		if(err) {
-// 			res.send(400, errors.errorByCode(err, 2001));
-// 		} else if(!users) {
-// 			res.send(404, errors.errorByCode(err, 2001));
-// 		} else {
-// 			res.json(users);
-// 		}
-// 	});
-// };
