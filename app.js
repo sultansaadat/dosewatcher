@@ -27,6 +27,8 @@ app.configure('development', function() {
 
 app.get('/signup', userRoutes.showsignup);
 app.post('/register', userRoutes.register);
+app.get('/login', userRoutes.showlogin);
+app.post('/authenticate', userRoutes.authenticate)
 // app.get('/login', userRoutes.showlogin);
 // app.post('/login', userRoutes.login);
 

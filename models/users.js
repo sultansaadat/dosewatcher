@@ -32,3 +32,17 @@ exports.saveUser = function(user, done) {
         done(err, toSave);
     });
 };
+
+exports.authenticateUser = function(user, done) {
+    User.findOne({
+        username: user.name,
+        password: user.password
+        
+    }, function(err, obj) {
+        if(err) {
+            done(err);
+        } else {
+            done(null, obj);
+        }
+    });
+};
