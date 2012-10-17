@@ -40,28 +40,36 @@ exports.authenticate = function(req, res) {
 		username: req.body.username,
 		password: req.body.password
 	}
-	usermodel.find(user)
-}
-exports.getUser = function(req, res) {
-	dao.getUser(req.params.id, function(err, user) {
+	usermodel.authenticateUser(user, function(err, result) {
 		if(err) {
-			res.send(400, errors.errorByCode(err, 2001));
-		} else if(!user) {
-			res.send(404, errors.errorByCode(err, 2001));
+			res.send(400);
 		} else {
-			res.json(user);
+			res.json(result);
 		}
 	});
 };
 
-exports.getUsers = function(req, res) {
-	dao.getUsers(function(err, users) {
-		if(err) {
-			res.send(400, errors.errorByCode(err, 2001));
-		} else if(!users) {
-			res.send(404, errors.errorByCode(err, 2001));
-		} else {
-			res.json(users);
-		}
-	});
-};
+
+// exports.getUser = function(req, res) {
+// 	dao.getUser(req.params.id, function(err, user) {
+// 		if(err) {
+// 			res.send(400, errors.errorByCode(err, 2001));
+// 		} else if(!user) {
+// 			res.send(404, errors.errorByCode(err, 2001));
+// 		} else {
+// 			res.json(user);
+// 		}
+// 	});
+// };
+
+// exports.getUsers = function(req, res) {
+// 	dao.getUsers(function(err, users) {
+// 		if(err) {
+// 			res.send(400, errors.errorByCode(err, 2001));
+// 		} else if(!users) {
+// 			res.send(404, errors.errorByCode(err, 2001));
+// 		} else {
+// 			res.json(users);
+// 		}
+// 	});
+// };

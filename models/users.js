@@ -35,13 +35,13 @@ exports.saveUser = function(user, done) {
 
 exports.authenticateUser = function(user, done) {
     User.findOne({
-        username: user.name,
+        username: user.username,
         password: user.password
-        
     }, function(err, obj) {
         if(err) {
             done(err);
         } else {
+            //console.log(obj);
             done(null, obj);
         }
     });
