@@ -21,13 +21,14 @@ var User = db.model('User', userSchema);
 
 exports.saveUser = function(user, done) {
     var toSave = new User({
-        userName: user.username,
+        username: user.username,
         email: user.email,
         password: user.password,
         notifications: user.notifications,
         sleeptimestart: user.sleeptimestart,
         sleeptimeend: user.sleeptimeend
     });
+    
     toSave.save(function(err) {
         done(err, toSave);
     });
@@ -41,8 +42,7 @@ exports.authenticateUser = function(user, done) {
         if(err) {
             done(err);
         } else {
-            //console.log(obj);
-            done(null, obj);
+            done(obj);
         }
     });
 };

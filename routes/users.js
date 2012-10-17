@@ -38,6 +38,7 @@ exports.authenticate = function(req, res) {
 		username: req.body.username,
 		password: req.body.password
 	}
+	console.log(user);
 	usermodel.authenticateUser(user, function(err, result) {
 		if(err) {
 			res.send(400);
