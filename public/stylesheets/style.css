@@ -1,0 +1,53 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+/*label {
+	width: 20px;
+    float: left;
+    margin-left: 100px;
+}
+
+input {
+	float:left;
+	margin-left: 75px;
+}*/
+
+
+.container   
+{ 
+	width:300px; 
+	background-color:#222;
+	overflow:hidden;
+    /*padding:10px; */
+}
+
+form         
+{ 
+	color:#FEFEFE; 
+	width:300px; 
+	margin:0 auto;
+}
+
+
+input 
+{ 
+	/*clear: left;*/
+	float:left; 
+	margin-left: 30px;
+}
+
+label        
+{ 
+	float:left; 
+	margin-left: 30px;
+	clear:left; 
+	display:block; 
+	width:60px; 
+	
+}

@@ -1,0 +1,32 @@
+extends layout
+
+block content
+	center
+		h1= title
+		form(action="/register", method="post")
+			div(id="field-container", class="container")
+				label UserName
+				input(type='text',name='username', maxlength='20') 
+				br
+				label Email
+				input(type='text',name='email', maxlength='30')
+				br
+				label Password
+				input(type='password', name='password', maxlength='20')
+				br
+				label Notifications
+				input(type='checkbox', name='notifications', checked)
+				br
+				label Sleep Start
+				input(type='text', name='sleeptimestart', checked)
+				br
+				label Sleep End
+				input(type='text', name='sleeptimeend', checked)
+				br
+				input(type='submit', value='Sign Up')
+
+
+
+
+			
+
