@@ -4,7 +4,7 @@ module.exports = function() {
     // common values here
     var conf = {
         serverName: 'mongo-api',
-        listenPort: 3001,
+        listenPort: 3000,
         mongo: {
             url: 'localhost:27017/dosetime'
         }

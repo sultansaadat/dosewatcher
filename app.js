@@ -3,6 +3,7 @@
  */
 
 var express = require('express'),
+  conf = require('./conf.js'),
   userRoutes = require('./routes/users.js'),
   http = require('http'),
   path = require('path');
@@ -10,7 +11,7 @@ var express = require('express'),
 var app = express();
 
 app.configure(function() {
-  app.set('port', process.env.PORT || 3000);
+  app.set('port', conf.listenPort);
   app.set('views', __dirname + '/views');
   app.set('view engine', 'jade');
   app.use(express.favicon());
