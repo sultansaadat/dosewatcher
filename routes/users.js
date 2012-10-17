@@ -14,6 +14,12 @@ exports.showlogin = function(req, res) {
 	});
 };
 
+exports.showtimer = function(req, res) {
+	res.render('timer', {
+		title: 'Start Timer'
+	});
+};
+
 exports.register = function(req, res) {
 	var user = {
 		username: req.body.username,
@@ -31,7 +37,8 @@ exports.register = function(req, res) {
 			// res.send(200, user);
 			res.render('timer', {
 				title: 'Start Dose Timer'
-			}
+			});
+
 		}
 	});
 };

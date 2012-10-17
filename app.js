@@ -32,6 +32,9 @@ app.post('/register', userRoutes.register);
 app.get('/login', userRoutes.showlogin);
 app.post('/authenticate', userRoutes.authenticate)
 
+app.get('/timer', userRoutes.showtimer);
+app.post('/starttimer', userRoutes.startTimer);
+
 
 http.createServer(app).listen(app.get('port'), function() {
   console.log("Express server listening on port " + app.get('port'));
