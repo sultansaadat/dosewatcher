@@ -30,10 +30,9 @@ app.get('/signup', userRoutes.showsignup);
 app.post('/register', userRoutes.register);
 
 app.get('/login', userRoutes.showlogin);
-app.post('/authenticate', userRoutes.authenticate)
+app.post('/authenticate', userRoutes.authenticate);
 
-app.get('/timer', userRoutes.showtimer);
-app.post('/starttimer', userRoutes.startTimer);
+app.post('/starttimer', userRoutes.starttimer);
 
 
 http.createServer(app).listen(app.get('port'), function() {

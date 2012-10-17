@@ -5,6 +5,7 @@ block content
 		h1= title
 		form(action="/starttimer", method="post")
 			div(id="field-container", class="container")
-				div(id='timer-div')
+				label UserName
+				input(type='text',name='username', maxlength='20') 
 				br
 				input(type='submit', value='Start')

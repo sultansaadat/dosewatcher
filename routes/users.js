@@ -1,6 +1,10 @@
 var conf = require('../conf.js');
 var log = conf.logger;
 var usermodel = require(__dirname + '/../models/users.js');
+var Twilio = require('twilio-js');
+
+Twilio.AccountSid = "AC69fa6c1bb36d508a1f0dd9fbaa8e45df";
+Twilio.AuthToken = "868989fede7263e73cf25dd2d5ab2a97";
 
 exports.showsignup = function(req, res) {
 	res.render('signup', {
@@ -14,10 +18,16 @@ exports.showlogin = function(req, res) {
 	});
 };
 
-exports.showtimer = function(req, res) {
-	res.render('timer', {
-		title: 'Start Timer'
-	});
+
+exports.starttimer = function(req, res) {
+	Twilio.SMS.create({
+		to: "+971562319447",
+		from: "+14253215939",
+		url: "http://test.com/sms"
+	}, function(err, res) {
+		//console.log('SMS Sent');
+		console.log(res);
+	})
 };
 
 exports.register = function(req, res) {
