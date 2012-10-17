@@ -28,7 +28,10 @@ exports.register = function(req, res) {
 		if(err) {
 			res.send(400);
 		} else {
-			res.send(200, user);
+			// res.send(200, user);
+			res.render('timer', {
+				title: 'Start Dose Timer'
+			}
 		}
 	});
 };

@@ -1,0 +1,10 @@
+extends layout
+
+block content
+	center
+		h1= title
+		form(action="/starttimer", method="post")
+			div(id="field-container", class="container")
+				div(id='timer-div')
+				br
+				input(type='submit', value='Start')
